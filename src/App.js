@@ -48,45 +48,53 @@ export default function InventoryApp() {
 
   return (
     <>
-      <Header />
       <motion.div className="app-container">
-        <Card>
-          <CardContent>
-            <div className="form-section">
-              <Input
-                placeholder="Item Name"
-                value={newItem.name}
-                onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
-              />
-              <Input
-                placeholder="Category"
-                value={newItem.category}
-                onChange={(e) => setNewItem({ ...newItem, category: e.target.value })}
-              />
-              <Input
-                type="number"
-                placeholder="Quantity"
-                value={newItem.quantity}
-                onChange={(e) => setNewItem({ ...newItem, quantity: e.target.value })}
-              />
-              {editingItem ? (
-                <Button onClick={handleUpdateItem} className="btn-update">
-                  Update
-                </Button>
-              ) : (
-                <Button onClick={handleAddItem} className="btn-add">
-                  <Plus className="w-5 h-5" /> Add
-                </Button>
-              )}
-            </div>
-            <Select onChange={setFilter} value={filter}>
-              <option value="All">All</option>
-              {Array.from(new Set(items.map(item => item.category))).map(category => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </Select>
+      <Header />
+      <Card>
+        <CardContent>
+          <div className="form-container">
+            <Input
+              placeholder="Item Name"
+              value={newItem.name}
+              onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+              className="input-field"
+            />
+            <Input
+              placeholder="Category"
+              value={newItem.category}
+              onChange={(e) => setNewItem({ ...newItem, category: e.target.value })}
+              className="input-field"
+            />
+            <Input
+              type="number"
+              placeholder="Quantity"
+              value={newItem.quantity}
+              onChange={(e) => setNewItem({ ...newItem, quantity: e.target.value })}
+              className="input-field"
+            />
+            {editingItem ? (
+              <Button onClick={handleUpdateItem} className="bg-green-500 hover:bg-green-600">
+                Update
+              </Button>
+            ) : (
+              <Button onClick={handleAddItem} className="bg-blue-500 hover:bg-blue-600 flex items-center">
+                <Plus className="w-5 h-5 mr-1" /> Add
+              </Button>
+            )}
+          </div>
+          <Select
+            onChange={setFilter}
+            value={filter}
+            className="filter-select"
+          >
+            <option value="All">All</option>
+            {Array.from(new Set(items.map((item) => item.category))).map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </Select>
+          <div className="table-container">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -99,36 +107,32 @@ export default function InventoryApp() {
               <TableBody>
                 {filteredItems.length === 0 ? (
                   <TableRow>
-                    <TableCell colSpan={4} className="text-center">
+                    <TableCell colSpan={4} className="text-center text-gray-500">
                       No items found.
                     </TableCell>
                   </TableRow>
                 ) : (
-                  filteredItems.map(item => (
+                  filteredItems.map((item) => (
                     <TableRow key={item.id}>
-                      <TableCell
-                        className={item.quantity < 10 ? 'low-stock' : ''}
-                      >
+                      <TableCell className={item.quantity < 10 ? 'bg-red-100 text-red-700 font-bold' : ''}>
                         {item.name}
                       </TableCell>
                       <TableCell>{item.category}</TableCell>
-                      <TableCell
-                        className={item.quantity < 10 ? 'low-stock' : ''}
-                      >
+                      <TableCell className={item.quantity < 10 ? 'bg-red-100 text-red-700 font-bold' : ''}>
                         {item.quantity}
                       </TableCell>
                       <TableCell>
                         <Button
                           onClick={() => handleEditItem(item)}
-                          className="btn-edit"
+                          className="bg-yellow-500 hover:bg-yellow-600"
                         >
-                          <Edit className="w-5 h-5" /> Edit
+                          Edit
                         </Button>
                         <Button
                           onClick={() => handleDeleteItem(item.id)}
-                          className="btn-delete"
+                          className="bg-red-500 hover:bg-red-600"
                         >
-                          <Trash className="w-5 h-5" /> Delete
+                          Delete
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -136,9 +140,11 @@ export default function InventoryApp() {
                 )}
               </TableBody>
             </Table>
-          </CardContent>
-        </Card>
-      </motion.div>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>;
+
     </>
   );
 }

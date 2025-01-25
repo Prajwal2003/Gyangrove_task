@@ -31,7 +31,7 @@ A simple and responsive inventory management app built with React.
    ```
 2. Navigate to the project directory:
    ```bash
-   cd inventory-management-app
+   cd Gyangrove_task
    ```
 3. Install dependencies:
    ```bash

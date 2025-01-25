@@ -1,74 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Trash, Edit } from 'lucide-react';
 import './App.css';
 
-function Header() {
-  return (
-    <header className="app-header">
-      <div className="header-content">
-        <img src="logo.png" alt="Logo" className="header-logo" />
-        <h1 className="header-title">Inventory Management App</h1>
-      </div>
-    </header>
-  );
-}
-
-function Card({ children }) {
-  return <div className="card">{children}</div>;
-}
-
-function CardContent({ children }) {
-  return <div className="card-content">{children}</div>;
-}
-
-function Button({ children, onClick, className = "" }) {
-  return (
-    <button onClick={onClick} className={`btn ${className}`}>
-      {children}
-    </button>
-  );
-}
-
-function Input({ placeholder, value, onChange, type = 'text' }) {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      className="input"
-    />
-  );
-}
-
-function Select({ children, onChange, value }) {
-  return (
-    <select onChange={(e) => onChange(e.target.value)} value={value} className="select">
-      {children}
-    </select>
-  );
-}
-
-function Table({ children }) {
-  return <table className="table">{children}</table>;
-}
-
-function TableHeader({ children }) {
-  return <thead className="table-header">{children}</thead>;
-}
-
-function TableBody({ children }) {
-  return <tbody>{children}</tbody>;
-}
-
-function TableRow({ children }) {
-  return <tr className="table-row">{children}</tr>;
-}
-
-function TableCell({ children, className = "" }) {
-  return <td className={`table-cell ${className}`}>{children}</td>;
-}
+import Header from './components/Header';
+import { Card, CardContent } from './components/Card';
+import Button from './components/Button';
+import Input from './components/Input';
+import Select from './components/Select';
+import { Table, TableHeader, TableBody, TableRow, TableCell } from './components/Table';
 
 export default function InventoryApp() {
   const initialItems = [
@@ -135,7 +75,7 @@ export default function InventoryApp() {
                 </Button>
               ) : (
                 <Button onClick={handleAddItem} className="btn-add">
-                  <Plus className="icon" /> Add
+                  <Plus className="w-5 h-5" /> Add
                 </Button>
               )}
             </div>
@@ -182,13 +122,13 @@ export default function InventoryApp() {
                           onClick={() => handleEditItem(item)}
                           className="btn-edit"
                         >
-                          <Edit className="icon" /> Edit
+                          <Edit className="w-5 h-5" /> Edit
                         </Button>
                         <Button
                           onClick={() => handleDeleteItem(item.id)}
                           className="btn-delete"
                         >
-                          <Trash className="icon" /> Delete
+                          <Trash className="w-5 h-5" /> Delete
                         </Button>
                       </TableCell>
                     </TableRow>

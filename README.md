@@ -27,7 +27,7 @@ A simple and responsive inventory management app built with React.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/inventory-management-app.git
+   git clone https://github.com/Prajwal2003/Gyangrove_task.git
    ```
 2. Navigate to the project directory:
    ```bash

@@ -1,172 +1,178 @@
-/* General reset */
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #ebf8ff, #edf2f7);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
 }
 
-/* Card Styles */
+.app-header {
+  background-color: #3182ce;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.app-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .card {
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 32px;
   background-color: white;
-  border: 1px solid #d1d5db;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 1rem 0;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1rem;
 }
 
-/* Typography */
-h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  color: #2d3748;
-  margin-bottom: 20px;
-}
-
-/* Form Inputs */
-.input,
-.select {
-  border: 1px solid #d1d5db;
-  border-radius: 12px;
-  padding: 12px 16px;
+.input {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   width: 100%;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
-.input:focus,
-.select:focus {
+.input:focus {
   border-color: #3182ce;
-  box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.3);
+  outline: none;
+  box-shadow: 0 0 8px rgba(49, 130, 206, 0.4);
 }
 
-.input-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-/* Button Styles */
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  border-radius: 12px;
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   font-weight: bold;
-  cursor: pointer;
+  font-size: 1rem;
   border: none;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+  gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.button:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.btn:hover {
+  transform: scale(1.02);
 }
 
-.button-blue {
-  background-color: #3182ce;
+.btn-add {
+  background-color: #9f9f9f;
   color: white;
 }
 
-.button-blue:hover {
-  background-color: #2b6cb0;
+.btn-add:hover {
+  background-color: #6b6b6b;
 }
 
-.button-green {
+.btn-update {
   background-color: #38a169;
   color: white;
 }
 
-.button-green:hover {
+.btn-update:hover {
   background-color: #2f855a;
 }
 
-.button-yellow {
-  background-color: #d69e2e;
+.btn-edit {
+  background-color: #3182ce;
   color: white;
 }
 
-.button-yellow:hover {
-  background-color: #b7791f;
+.btn-edit:hover {
+  background-color: #235c93;
 }
 
-.button-red {
+.btn-delete {
   background-color: #e53e3e;
   color: white;
 }
 
-.button-red:hover {
+.btn-delete:hover {
   background-color: #c53030;
 }
 
-/* Table Styles */
+.select {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.select:focus {
+  border-color: #3182ce;
+  outline: none;
+  box-shadow: 0 0 8px rgba(49, 130, 206, 0.4);
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
-.table thead {
-  background-color: #ebf8ff;
-}
-
-.table th {
-  font-weight: bold;
-  text-align: left;
-  padding: 16px;
+.table-header {
+  background-color: #bee3f8;
   color: #2c5282;
 }
 
-.table td {
-  padding: 16px;
-  border: 1px solid #e2e8f0;
-}
-
 .table-row {
-  transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 
 .table-row:hover {
-  background-color: #f7fafc;
+  background-color: #f1f5f9;
 }
 
-.low-stock {
-  background-color: #fff5f5;
+.table-cell {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table-cell.low-stock {
+  background-color: #fed7d7;
   color: #c53030;
   font-weight: bold;
 }
 
-/* Utility Classes */
-.text-center {
-  text-align: center;
-}
-
-.flex {
+.form-section {
   display: flex;
-}
-
-.gap-4 {
-  gap: 16px;
-}
-
-.mb-6 {
-  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }

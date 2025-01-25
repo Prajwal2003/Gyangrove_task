@@ -1,0 +1,172 @@
+/* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ebf8ff, #edf2f7);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.input,
+.select {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus,
+.select:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.3);
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Button Styles */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-blue {
+  background-color: #3182ce;
+  color: white;
+}
+
+.button-blue:hover {
+  background-color: #2b6cb0;
+}
+
+.button-green {
+  background-color: #38a169;
+  color: white;
+}
+
+.button-green:hover {
+  background-color: #2f855a;
+}
+
+.button-yellow {
+  background-color: #d69e2e;
+  color: white;
+}
+
+.button-yellow:hover {
+  background-color: #b7791f;
+}
+
+.button-red {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.button-red:hover {
+  background-color: #c53030;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background-color: #ebf8ff;
+}
+
+.table th {
+  font-weight: bold;
+  text-align: left;
+  padding: 16px;
+  color: #2c5282;
+}
+
+.table td {
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.table-row {
+  transition: background-color 0.3s;
+}
+
+.table-row:hover {
+  background-color: #f7fafc;
+}
+
+.low-stock {
+  background-color: #fff5f5;
+  color: #c53030;
+  font-weight: bold;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
